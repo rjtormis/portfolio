@@ -1,0 +1,20 @@
+name: Release 
+on: workflow_dispatch
+jobs:
+    release:
+        runs-on: ubuntu-20.04
+        steps:
+            - name: Checkout sourecode
+              uses: actions/checkout@v4
+            - name: Install dependencies
+              run: npm run install
+            - name: Initialize Git user
+              run: | 
+                  git config --global user.email "raneljohnt@gmail.com"
+                  git config --global user.name "Release Workflow"
+            - name: Run release
+              run: npm run release --ci
+              env: 
+                GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+                
+            
