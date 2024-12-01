@@ -16,42 +16,48 @@ import {
 } from "@/components/ui/sheet";
 import { MdOutlineMenu } from "react-icons/md";
 import Link from "next/link";
+
 function Header() {
-  const [width, setWidth] = useState<number>(window.innerWidth);
-
-  const handleWindowSizeChange = () => {
-    setWidth(window.innerWidth);
-  };
-
-  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  const [width, setWidth] = useState<number>(768); // Default value to prevent SSR issues
+  const [isClient, setIsClient] = useState(false); // Ensure `window` is accessed only on the client
 
   useEffect(() => {
+    setIsClient(true); // Indicate the component is running on the client
+    const handleWindowSizeChange = () => {
+      setWidth(window.innerWidth);
+    };
+
+    handleWindowSizeChange(); // Set initial width on mount
     window.addEventListener("resize", handleWindowSizeChange);
     return () => {
       window.removeEventListener("resize", handleWindowSizeChange);
     };
   }, []);
-  const isMobile = width <= 768;
 
+  const systemTheme =
+    isClient && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+
+  const isMobile = width <= 768;
   const { theme } = useTheme();
+
   return (
     <div className="sticky top-0 p-4 bg-background z-50 shadow-md">
       <div className="flex justify-between">
         {theme === "system" && systemTheme === "dark" ? (
-          <Image src={white} alt="logo" className="w-[60px] h-[60px] " />
+          <Image src={white} alt="logo" className="w-[60px] h-[60px]" />
         ) : theme === "system" && systemTheme === "light" ? (
-          <Image src={black} alt="logo" className="w-[60px] h-[60px] " />
+          <Image src={black} alt="logo" className="w-[60px] h-[60px]" />
         ) : theme === "light" ? (
-          <Image src={black} alt="logo" className="w-[60px] h-[60px] " />
+          <Image src={black} alt="logo" className="w-[60px] h-[60px]" />
         ) : (
-          <Image src={white} alt="logo" className="w-[60px] h-[60px] " />
+          <Image src={white} alt="logo" className="w-[60px] h-[60px]" />
         )}
         <div className="my-auto flex">
           {isMobile ? (
             <Sheet>
               <SheetTrigger
                 type="button"
-                className=" mx-2 my-auto hover:bg-accent hover:text-accent-foreground p-2 rounded-md"
+                className="mx-2 my-auto hover:bg-accent hover:text-accent-foreground p-2 rounded-md"
               >
                 <MdOutlineMenu className="my-auto" size={18} />
               </SheetTrigger>
@@ -87,7 +93,6 @@ function Header() {
               </Button>
             </>
           )}
-
           <ThemeToggle />
         </div>
       </div>
