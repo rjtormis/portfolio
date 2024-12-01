@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
+import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
+import { PartyPopper } from "lucide-react";
 
 const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 
@@ -26,6 +28,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Toaster
+            icons={{
+              success: <PartyPopper />,
+            }}
+          />
         </ThemeProvider>
       </body>
     </html>

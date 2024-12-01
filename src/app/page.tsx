@@ -1,84 +1,33 @@
 "use client";
-import Header from "@/components/header";
+import { motion } from "motion/react";
 import code from "@/assets/code.json";
 import laptop from "@/assets/laptop.json";
 import codealt from "@/assets/landing-alt.json";
 import Lottie from "lottie-react";
 import Items from "@/components/items";
-import Link from "next/link";
-import contact from "@/assets/contact.json";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { RiReactjsFill, RiNextjsFill } from "react-icons/ri";
-import {
-  SiExpress,
-  SiDocker,
-  SiGithub,
-  SiGithubactions,
-  SiFlask,
-  SiTailwindcss,
-  SiShadcnui,
-} from "react-icons/si";
-import ProjectCard from "@/components/project-card";
 import { useTheme } from "next-themes";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { tools } from "./utilities/utils";
+import Contact from "@/components/contact";
+import ProjectList from "@/components/project";
+import { toast } from "sonner";
 export default function Home() {
   const { theme } = useTheme();
-  const tools = [
-    {
-      type: "frontend",
-      name: "ReactJS",
-      design: <RiReactjsFill size={24} />,
-    },
-    {
-      type: "frontend",
-      name: "TailwindCSS",
-      design: <SiTailwindcss size={24} />,
-    },
-    {
-      type: "frontend",
-      name: "ShadcnUI",
-      design: <SiShadcnui size={24} />,
-    },
 
-    {
-      type: "backend",
-      name: "ExpressJS",
-      design: <SiExpress size={24} />,
-    },
-    {
-      type: "backend",
-      name: "Flask",
-      design: <SiFlask size={24} />,
-    },
-    {
-      type: "backend",
-      name: "NextJS",
-      design: <RiNextjsFill size={24} />,
-    },
-    {
-      type: "tools",
-      name: "Github",
-      design: <SiGithub size={24} />,
-    },
-    {
-      type: "tools",
-      name: "Github actions",
-      design: <SiGithubactions size={24} />,
-    },
-    {
-      type: "tools",
-      name: "Docker",
-      design: <SiDocker size={24} />,
-    },
-  ];
+  const handleDownloadResume = () => {
+    toast.success("Success!", {
+      description: "Resume downloaded.",
+    });
+  };
+
   return (
     <div className="min-h-screen">
       <Header />
+
       <div className="flex flex-col px-20">
         <div className="h-screen flex flex-col">
           <div className="flex-grow flex  flex-col justify-center ">
@@ -91,24 +40,33 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="flex gap-2 justify-center xl:justify-start">
-                  <Button size="lg" className="rounded-full">
-                    About
-                  </Button>
-                  <Button size="lg" className="rounded-full">
-                    Download Resume
-                  </Button>
+                  <motion.div whileHover={{ scale: 1.05 }}>
+                    <Button size="lg" className="rounded-full">
+                      About
+                    </Button>
+                  </motion.div>
+
+                  <a href="/RJT_CV_2024.pdf" download="RJT_CV_2024" onClick={handleDownloadResume}>
+                    <motion.div whileHover={{ scale: 1.05 }}>
+                      <Button variant="altghost" size="lg" className="rounded-full">
+                        Download Resume
+                      </Button>
+                    </motion.div>
+                  </a>
                 </div>
 
                 <div className="my-2 flex gap-2 justify-center xl:justify-start">
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Link
-                          href="test"
+                        <motion.a
+                          whileHover={{ scale: 1.1 }}
+                          href="https://github.com/rjtormis"
                           className="my-auto hover:bg-accent hover:text-accent-foreground p-2 rounded-md"
+                          target="_blank"
                         >
                           <Github size={24} />
-                        </Link>
+                        </motion.a>
                       </TooltipTrigger>
                       <TooltipContent side="bottom">Github</TooltipContent>
                     </Tooltip>
@@ -116,25 +74,31 @@ export default function Home() {
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Link
-                          href="test"
+                        <motion.a
+                          whileHover={{ scale: 1.1 }}
+                          href="https://www.linkedin.com/in/ranel-john-tormis-2b83a9200/"
                           className="my-auto hover:bg-accent hover:text-accent-foreground p-2 rounded-md"
+                          target="_blank"
                         >
                           <Linkedin size={24} />
-                        </Link>
+                        </motion.a>
                       </TooltipTrigger>
                       <TooltipContent side="bottom">Linkedin</TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
                 </div>
               </div>
-              <div className="flex justify-center">
+              <motion.div
+                className="flex justify-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
                 {theme === "light" ? (
                   <Lottie animationData={code} loop={true} />
                 ) : (
                   <Lottie animationData={codealt} loop={true} />
                 )}
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -211,46 +175,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className=" text-center lg:text-justify my-24">
-          <div className="my-2 text-center">
-            <h1 className="text-4xl lg:text-6xl">projects</h1>
-            <p className="text-sm text-muted-foreground my-2">
-              Projects that I have worked on during my free time.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 text-lg ">
-            <ProjectCard />
-          </div>
-        </div>
+        <ProjectList />
 
-        <div className=" lg:text-justify my-10">
-          <div className="my-2">
-            <h1 className="text-4xl text-center lg:text-left lg:text-6xl">let&apos;s connect</h1>
-            <p className="text-sm text-center lg:text-left text-muted-foreground my-2">
-              Let&apos;s connect! If you have something in mind, feel free to share your thoughts.{" "}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 text-lg ">
-            <div className="flex flex-col ">
-              <section>
-                <Label htmlFor="name">Email</Label>
-                <Input name="name" placeholder="Your name" className="my-2" />
-              </section>
-              <section>
-                <Label htmlFor="email">Email</Label>
-                <Input name="email" placeholder="Your email" className="my-2" />
-              </section>
-              <section>
-                <Label htmlFor="message">Message</Label>
-                <Textarea name="message" placeholder="Your message" className="my-2" />
-              </section>
-              <div className="my-4 flex justify-center lg:justify-end">
-                <Button>Send me a message</Button>
-              </div>
-            </div>
-            <Lottie animationData={contact} loop={true} className=" m-auto" />
-          </div>
-        </div>
+        <Contact />
       </div>
       <Footer />
     </div>
