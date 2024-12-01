@@ -34,11 +34,17 @@ function Contact() {
       });
       setLoading(false);
       actions.resetForm();
-    } catch (e) {
+    } catch (e: unknown) {
       setLoading(false);
-      toast.error("Message was not sent", {
-        description: "Your message was not sent. Please try again",
-      });
+      if (e instanceof Error) {
+        toast.error("Message was not sent", {
+          description: `Error: ${e.message}. Please try again.`,
+        });
+      } else {
+        toast.error("Message was not sent", {
+          description: "An unexpected error occurred. Please try again.",
+        });
+      }
     }
   };
   return (
