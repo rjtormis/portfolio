@@ -150,7 +150,7 @@ export default function Home() {
           <div className="text-center ">
             <div className="my-2 lg:text-right">
               <h1 className="text-4xl lg:text-6xl">about</h1>
-              <p className="text-sm text-muted-foreground">A short introduction</p>
+              <p className="text-sm text-muted-foreground">A short introduction.</p>
             </div>
             <div className="flex flex-col gap-3 text-lg text-justify ">
               <p>
