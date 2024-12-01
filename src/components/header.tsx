@@ -28,16 +28,16 @@ function Header({ isMobile }: { isMobile: boolean }) {
         ) : theme === "system" && resolvedTheme === "light" ? (
           <Image src={black} alt="logo" className="w-[60px] h-[60px] " />
         ) : theme === "light" ? (
-          <Image src={black} alt="logo" className="w-[60px] h-[60px] " />
+          <Image src={black} alt="logo" className="w-[60px] h-[60px]" />
         ) : (
-          <Image src={white} alt="logo" className="w-[60px] h-[60px] " />
+          <Image src={white} alt="logo" className="w-[60px] h-[60px]" />
         )}
         <div className="my-auto flex">
           {isMobile ? (
             <Sheet>
               <SheetTrigger
                 type="button"
-                className=" mx-2 my-auto hover:bg-accent hover:text-accent-foreground p-2 rounded-md"
+                className="mx-2 my-auto hover:bg-accent hover:text-accent-foreground p-2 rounded-md"
               >
                 <MdOutlineMenu className="my-auto" size={18} />
               </SheetTrigger>
@@ -73,7 +73,6 @@ function Header({ isMobile }: { isMobile: boolean }) {
               </Button>
             </>
           )}
-
           <ThemeToggle />
         </div>
       </div>

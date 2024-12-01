@@ -12,13 +12,11 @@ import Lottie from "lottie-react";
 
 function Hero() {
   const { theme } = useTheme();
-
   const handleDownloadResume = () => {
     toast.success("Success!", {
       description: "Resume downloaded.",
     });
   };
-
   return (
     <div className="h-screen flex flex-col">
       <div className="flex-grow flex  flex-col justify-center ">

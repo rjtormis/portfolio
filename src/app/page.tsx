@@ -21,7 +21,6 @@ export default async function Home() {
         <About />
 
         <ProjectList />
-
         <Contact />
       </div>
       <Footer />
