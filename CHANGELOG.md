@@ -1,5 +1,7 @@
 # CHANGELOG
 
+## [0.4.0](https://github.com/rjtormis/portfolio/compare/release/v0.3.0...release/v0.4.0) (2024-12-01)
+
 ## [0.3.0](https://github.com/rjtormis/portfolio/compare/release/v0.2.0...release/v0.3.0) (2024-12-01)
 
 ### Bug Fixes
