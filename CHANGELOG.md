@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.3.0](https://github.com/rjtormis/portfolio/compare/release/v0.2.0...release/v0.3.0) (2024-12-01)
+
+### Bug Fixes
+
+* Fix deployment issues ([9f03675](https://github.com/rjtormis/portfolio/commit/9f036758b87f288d23b1fccbfc1ae54c8579f83d))
+
 ## [0.2.0](https://github.com/rjtormis/portfolio/compare/release/v0.1.1...release/v0.2.0) (2024-12-01)
 
 ### Features
