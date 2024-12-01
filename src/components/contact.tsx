@@ -41,10 +41,6 @@ function Contact() {
           description: `Error: ${e.message}. Please try again.`,
         });
       } else {
-<<<<<<< HEAD
-=======
-        // Fallback for unexpected error structures
->>>>>>> 7dae4b16d7a47ecf7b8aaeb29637f4f52b8e643d
         toast.error("Message was not sent", {
           description: "An unexpected error occurred. Please try again.",
         });
