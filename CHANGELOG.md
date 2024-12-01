@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.6.0](https://github.com/rjtormis/portfolio/compare/release/v0.5.0...release/v0.6.0) (2024-12-01)
+
+### Bug Fixes
+
+* fix issue with vercel ([d1d29c3](https://github.com/rjtormis/portfolio/commit/d1d29c3a14eece22ff3349b7aebbf85a11257486))
+
 ## [0.5.0](https://github.com/rjtormis/portfolio/compare/release/v0.4.0...release/v0.5.0) (2024-12-01)
 
 ### Bug Fixes
