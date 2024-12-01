@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## [0.2.0](https://github.com/rjtormis/portfolio/compare/release/v0.1.1...release/v0.2.0) (2024-12-01)
+
+### Features
+
+* Added new components, framer motion, and functionalities ([3e4d5d7](https://github.com/rjtormis/portfolio/commit/3e4d5d718424421c52a7dbda01946b73c38a67e1))
+
+### Bug Fixes
+
+* Fixed issue for landing page ([0590413](https://github.com/rjtormis/portfolio/commit/0590413f9afaf72826f3b3d960844d0e332e073f))
+
 ## 0.1.1 (2024-12-01)
 
 ### Bug Fixes
