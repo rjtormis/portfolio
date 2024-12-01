@@ -155,21 +155,21 @@ export default function Home() {
               {tools
                 .filter((t) => t.type === "frontend")
                 .map((t) => (
-                  <Items key={t.name} name={t.name} design={t.design} />
+                  <Items key={t.name} name={t.name} icon={t.design} />
                 ))}
             </div>
             <div className="flex justify-center gap-10 my-4 ">
               {tools
                 .filter((t) => t.type === "tools")
                 .map((t) => (
-                  <Items key={t.name} name={t.name} design={t.design} />
+                  <Items key={t.name} name={t.name} icon={t.design} />
                 ))}
             </div>
             <div className="flex justify-center gap-10 my-4">
               {tools
                 .filter((t) => t.type === "backend")
                 .map((t) => (
-                  <Items key={t.name} name={t.name} design={t.design} />
+                  <Items key={t.name} name={t.name} icon={t.design} />
                 ))}
             </div>
           </div>
