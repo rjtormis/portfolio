@@ -1,15 +1,13 @@
 {
   "$schema": "https://unpkg.com/release-it/schema/release-it.json",
   "git": {
-    "changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/main/templates/changelog-compact.hbs",
     "requireBranch": "main",
     "commitMessage": "chore: release v${version}",
     "tagName": "release/v${version}",
     "requireCleanWorkingDir": false
   },
   "hooks": {
-    "before:init": ["git pull"],
-    "after:bump": "npx auto-changelog -p"
+    "before:init": ["git pull"]
   },
   "github": {
     "release": true,
@@ -17,5 +15,25 @@
   },
   "npm": {
     "publish": false
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "header": "# CHANGELOG",
+      "infile": "CHANGELOG.md",
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          {
+            "type": "feat",
+            "section": "Features"
+          },
+          {
+            "type": "fix",
+            "section": "Bug Fixes"
+          },
+          {}
+        ]
+      }
+    }
   }
 }
