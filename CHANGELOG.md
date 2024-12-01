@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.5.0](https://github.com/rjtormis/portfolio/compare/release/v0.4.0...release/v0.5.0) (2024-12-01)
+
+### Bug Fixes
+
+* fix issue with building packages ([f3ee3ca](https://github.com/rjtormis/portfolio/commit/f3ee3ca2fb4b20a259d065949aa861629aa68c4f))
+
 ## [0.4.0](https://github.com/rjtormis/portfolio/compare/release/v0.3.0...release/v0.4.0) (2024-12-01)
 
 ## [0.3.0](https://github.com/rjtormis/portfolio/compare/release/v0.2.0...release/v0.3.0) (2024-12-01)
