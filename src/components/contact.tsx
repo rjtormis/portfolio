@@ -36,6 +36,7 @@ function Contact() {
       actions.resetForm();
     } catch (e: unknown) {
       setLoading(false);
+      console.log(e);
       if (e instanceof Error) {
         console.log(e);
         toast.error("Message was not sent", {
