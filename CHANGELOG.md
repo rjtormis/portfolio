@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [0.7.0](https://github.com/rjtormis/portfolio/compare/release/v0.6.0...release/v0.7.0) (2024-12-01)
+
+### Bug Fixes
+
+* fix contact form ([f3eef16](https://github.com/rjtormis/portfolio/commit/f3eef169a2040f27d0b721e38ad6750f117dd8d0))
+* fix issue when building ([c5cbb25](https://github.com/rjtormis/portfolio/commit/c5cbb2544a582d3629d2530ebdbe206e58f983d0))
+
 ## [0.6.0](https://github.com/rjtormis/portfolio/compare/release/v0.5.0...release/v0.6.0) (2024-12-01)
 
 ### Bug Fixes
