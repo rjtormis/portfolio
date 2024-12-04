@@ -7,6 +7,7 @@ import Header from "@/components/header";
 // import HeaderWrapper from "@/components/header-wrapper";
 import { headers } from "next/headers";
 import { isMobile } from "@/lib/utils";
+import Techstack from "@/components/tech";
 
 export default async function Home() {
   const userAgent = (await headers()).get("user-agent") || "";
@@ -19,7 +20,7 @@ export default async function Home() {
       <div className="flex flex-col px-20">
         <Hero />
         <About />
-
+        <Techstack />
         <ProjectList />
         <Contact />
       </div>

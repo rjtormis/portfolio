@@ -37,6 +37,7 @@ function Contact() {
     } catch (e: unknown) {
       setLoading(false);
       if (e instanceof Error) {
+        console.log(e);
         toast.error("Message was not sent", {
           description: `Error: ${e.message}. Please try again.`,
         });
