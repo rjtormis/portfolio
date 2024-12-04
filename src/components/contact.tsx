@@ -20,6 +20,7 @@ function Contact() {
     email: "",
     message: "",
   };
+  console.log(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string);
   const handleSubmit = async (state: FormikContact, actions: FormikHelpers<FormikContact>) => {
     setLoading(true);
     try {
@@ -36,9 +37,7 @@ function Contact() {
       actions.resetForm();
     } catch (e: unknown) {
       setLoading(false);
-      console.log(e);
       if (e instanceof Error) {
-        console.log(e);
         toast.error("Message was not sent", {
           description: `Error: ${e.message}. Please try again.`,
         });
