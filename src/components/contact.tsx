@@ -27,7 +27,7 @@ function Contact() {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
         { name: state.name, message: state.message, email: state.email },
-        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string }
       );
       toast.success("Message sent successfully!", {
         description: "Your message has been sent successfully.",
