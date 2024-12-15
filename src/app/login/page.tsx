@@ -9,10 +9,12 @@ import { Label } from "@/components/ui/label";
 import { Field, FieldProps, Form, Formik, FormikHelpers } from "formik";
 import { accountFormSchema } from "@/schema/schema";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 function LoginPage() {
   const [isNewUser, setIsNewUser] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
+  const router = useRouter();
 
   const intialValues = {
     email: "",
@@ -25,9 +27,9 @@ function LoginPage() {
   ) => {
     setLoading(true);
     if (isNewUser) {
-      const data = await fetch(`${process.env.URL}/api/user`, {
+      const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/user`, {
         method: "POST",
-        headers: { "Content-Type": "application/jsonm" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(state),
       });
 
@@ -47,12 +49,22 @@ function LoginPage() {
         }, 1000);
       }
     } else {
-      await signIn("credentials", {
+      const res = await signIn("credentials", {
         email: state.email,
         password: state.password,
 
-        callbackUrl: "/dashboard",
+        redirect: false,
       });
+
+      if (res?.ok) {
+        router.push("/dashboard");
+      } else {
+        setLoading(false);
+
+        toast.error("An error occured.", {
+          description: "Invalid login credentials. Please try again.",
+        });
+      }
     }
   };
 
