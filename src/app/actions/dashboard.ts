@@ -17,7 +17,7 @@ export interface DashboardData {
   }[];
 }
 export const fetchDashboardData = async (): Promise<{ data: DashboardData }> => {
-  const response = await fetch(`${process.env.NEXTAUTH_URL}/api/dashboard`, {
+  const response = await fetch(`${process.env.URL}/api/dashboard`, {
     method: "GET",
     headers: await headers(),
   });

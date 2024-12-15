@@ -18,7 +18,7 @@ export interface ProjectData {
 }
 
 export const fetchAllProjects = async (): Promise<ProjectData[]> => {
-  const response = await fetch(`${process.env.NEXTAUTH_URL}/api/dashboard/projects`, {
+  const response = await fetch(`${process.env.URL}/api/dashboard/projects`, {
     method: "GET",
     headers: await headers(),
   });

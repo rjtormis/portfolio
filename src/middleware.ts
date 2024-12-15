@@ -9,7 +9,7 @@ export async function middleware() {
 
   // Metrics usage
   if (!initialVisit || initialVisit !== today) {
-    const data = await fetch(`${process.env.NEXTAUTH_URL}/api/dashboard/metrics`, {
+    const data = await fetch(`${process.env.URL}/api/dashboard/metrics`, {
       method: "GET",
       headers: await headers(),
     });
