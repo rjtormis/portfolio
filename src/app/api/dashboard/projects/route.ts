@@ -15,8 +15,8 @@ import { capitalizeFirstLetter } from "@/lib/utils";
 const client = new S3Client({
   region: process.env.AWS_REGION as string,
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY as string,
-    secretAccessKey: process.env.AWS_SECRET_KEY as string,
+    accessKeyId: process.env.AWS_AKEY as string,
+    secretAccessKey: process.env.AWS_SKEY as string,
   },
 });
 
