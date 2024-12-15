@@ -47,18 +47,12 @@ function LoginPage() {
         }, 1000);
       }
     } else {
-      const auth = await signIn("credentials", {
+      await signIn("credentials", {
         email: state.email,
         password: state.password,
 
         callbackUrl: "/dashboard",
       });
-
-      if (auth === undefined) {
-        toast.error("Failed to login.", {
-          description: "Incorrect password or account does not exists.Please try again",
-        });
-      }
     }
   };
 
