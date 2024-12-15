@@ -36,17 +36,15 @@ function LoginPage() {
       if (data.ok) {
         actions.resetForm();
         toast.success("Success", {
-          description: "Success in creating new account.Logging in.",
+          description: "Success in creating new account. Logging in.",
         });
-        setTimeout(async () => {
-          setLoading(false);
-          await signIn("credentials", {
-            email: state.email,
-            password: state.password,
+        setLoading(false);
+        await signIn("credentials", {
+          email: state.email,
+          password: state.password,
 
-            callbackUrl: "/dashboard",
-          });
-        }, 1000);
+          callbackUrl: "/dashboard",
+        });
       }
     } else {
       const res = await signIn("credentials", {
