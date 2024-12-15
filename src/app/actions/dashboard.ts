@@ -19,7 +19,7 @@ export interface DashboardData {
 export const fetchDashboardData = async (): Promise<{ data: DashboardData }> => {
   const response = await fetch(`${process.env.URL}/api/dashboard`, {
     method: "GET",
-    headers: await headers(),
+    headers: new Headers(await headers()),
   });
   if (!response.ok) {
     throw new Error("Failed to fetch dashboard data");

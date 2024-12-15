@@ -20,7 +20,7 @@ export interface ProjectData {
 export const fetchAllProjects = async (): Promise<ProjectData[]> => {
   const response = await fetch(`${process.env.URL}/api/dashboard/projects`, {
     method: "GET",
-    headers: await headers(),
+    headers: new Headers(await headers()),
   });
 
   if (!response.ok) {
