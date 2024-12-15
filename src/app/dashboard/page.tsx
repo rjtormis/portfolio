@@ -1,7 +1,13 @@
 import React from "react";
 
-function Dashboard() {
-  return <div>Dashboard</div>;
-}
+import Dashboard from "./dashboard";
+import { fetchDashboardData } from "../actions/dashboard";
 
-export default Dashboard;
+export default async function DashboardPage() {
+  const { data } = await fetchDashboardData();
+  return (
+    <>
+      <Dashboard data={data} />
+    </>
+  );
+}

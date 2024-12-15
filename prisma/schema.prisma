@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                   String    @id @default(uuid())
+  email                String    @unique
+  password             String    @db.VarChar(128)
+  totalDesktopView     Int       @default(0)
+  totalDeviceBreakdown Int       @default(0)
+  totalEmailsReceived  Int       @default(0)
+  totalMobileUserView  Int       @default(0)
+  totalPageView        Int       @default(0)
+  totalVisitor         Int       @default(0)
+  totalProjects        Int       @default(0)
+  projects             Project[]
+}
+
+model Project {
+  id          String   @id @default(uuid())
+  name        String   @db.VarChar(128)
+  short_description String   
+  description String   
+  techstack   Json
+  createdById String
+  createdDate DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  github      String   @db.VarChar(256)
+  live        String   @db.VarChar(256)
+  images      Json
+  status      String   @db.VarChar(20)
+  createdBy   User     @relation(fields: [createdById], references: [id])
+}
+
+model Mail {
+  id       String   @id @default(uuid())
+  name     String   @db.VarChar(128)
+  email    String   @db.VarChar(128)
+  message  String   @db.VarChar(256)
+  sentDate DateTime @default(now())
+}
+
+model VisitorViewPerMonth {
+  id       String   @id @default(uuid())  
+  month      String @db.VarChar(24)
+  year       Int
+  totalViews Int
+}

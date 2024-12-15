@@ -2,13 +2,13 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
-import code from "@/assets/code.json";
-import codealt from "@/assets/landing-alt.json";
 import { Github, Linkedin } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useTheme } from "next-themes";
 import { toast } from "sonner";
 import Lottie from "lottie-react";
+import code from "@/assets/code.json";
+import codealt from "@/assets/landing-alt.json";
 
 function Hero() {
   const { theme } = useTheme();

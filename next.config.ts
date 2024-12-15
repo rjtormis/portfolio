@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   env: {
     version,
   },
+  images: { remotePatterns: [{ hostname: "*" }] },
   /* config options here */
 };
 

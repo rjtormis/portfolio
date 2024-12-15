@@ -20,12 +20,15 @@ function Contact() {
     email: "",
     message: "",
   };
-  console.log(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string);
-  console.log(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string);
-  console.log(process.env.NEXT_PUBLIC_EMAILJS_PK as string);
   const handleSubmit = async (state: FormikContact, actions: FormikHelpers<FormikContact>) => {
     setLoading(true);
     try {
+      if (process.env.NEXT_PUBLIC_USER !== undefined) {
+        await fetch("api/metrics/emails", {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+        });
+      }
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
@@ -51,7 +54,7 @@ function Contact() {
     }
   };
   return (
-    <div className=" lg:text-justify my-10">
+    <div id="contact" className="scroll-mt-32 lg:text-justify my-10">
       <div className="my-2">
         <h1 className="text-4xl text-center lg:text-left lg:text-6xl">let&apos;s connect</h1>
         <p className="text-sm text-center lg:text-left text-muted-foreground my-2">

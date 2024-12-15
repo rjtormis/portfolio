@@ -5,7 +5,7 @@ import React from "react";
 
 function About() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 my-10">
+    <div id="about" className="grid grid-cols-1 lg:grid-cols-2 gap-8 my-10 scroll-mt-32">
       <div className="">
         <Lottie animationData={laptop} loop={true} className="lg:w-[600px] lg:h-[600px] m-auto" />
       </div>
