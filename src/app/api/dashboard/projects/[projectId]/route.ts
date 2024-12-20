@@ -26,7 +26,7 @@ export async function PATCH(req: Request) {
   if (!queryProject)
     return NextResponse.json({
       message: "Project does not exists. Please try again.",
-      status: 404,
+      status: "404",
     });
 
   const updatedProject = await prisma.project.update({
@@ -61,7 +61,7 @@ export async function DELETE(req: Request) {
   if (!queryProject)
     return NextResponse.json({
       message: "Project does not exists. Please try again.",
-      status: 404,
+      status: "404",
     });
 
   await prisma.project.delete({

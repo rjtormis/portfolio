@@ -3,10 +3,16 @@ import { updateMetrics } from "@/app/actions/metrics";
 import { prisma } from "@/lib/prisma";
 
 export async function GET() {
-  const user = await prisma.user.findMany({});
+  const email = process.env.EMAIL as string;
 
-  if (user.length >= 1) {
-    await updateMetrics({ id: user[0].id });
+  const user = await prisma.user.findFirst({
+    where: {
+      email: email,
+    },
+  });
+
+  if (user) {
+    await updateMetrics({ id: user.id });
     return NextResponse.json({ message: "Metrics updated." });
   }
 

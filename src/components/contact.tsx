@@ -23,12 +23,10 @@ function Contact() {
   const handleSubmit = async (state: FormikContact, actions: FormikHelpers<FormikContact>) => {
     setLoading(true);
     try {
-      if (process.env.NEXT_PUBLIC_USER !== undefined) {
-        await fetch("api/metrics/emails", {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-        });
-      }
+      await fetch("api/dashboard/metrics/email", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+      });
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,

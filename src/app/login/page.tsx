@@ -27,7 +27,7 @@ function LoginPage() {
   ) => {
     setLoading(true);
     if (isNewUser) {
-      const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/user`, {
+      const data = await fetch(`api/user`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(state),

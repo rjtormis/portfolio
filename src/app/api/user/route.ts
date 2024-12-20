@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
+import { getServerSession } from "next-auth";
+import { options } from "../auth/[...nextauth]/options";
 
 type User = {
   name: string;
@@ -8,6 +10,12 @@ type User = {
   password: string;
 };
 export async function POST(req: Request) {
+  const session = await getServerSession(options);
+
+  if (!session) {
+    return NextResponse.json({ message: "Please login.", status: 500 });
+  }
+
   const data: User = await req.json();
 
   const queryUser = await prisma.user.findFirst({

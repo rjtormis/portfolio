@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import type { NextAuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 
 export const options: NextAuthOptions = {
@@ -48,11 +48,13 @@ export const options: NextAuthOptions = {
       user: {
         ...session.user,
         id: token.sub,
+        isAdmin: session.user.email === "raneljohnt@gmail.com",
       },
     }),
   },
   session: {
     strategy: "jwt",
+    maxAge: 60 * 60,
   },
   secret: process.env.AUTH_SECRET,
 };

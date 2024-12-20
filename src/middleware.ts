@@ -20,8 +20,7 @@ export async function middleware() {
       }
     }
   }
-
-  return NextResponse.next(); // Allow all other requests
+  return NextResponse.next();
 }
 export const config = {
   matcher: [
