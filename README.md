@@ -73,6 +73,12 @@ To run the development server:
 2. `npx prisma generate` to generate schema models
 3. `npm run dev`
 
+## Docker 
+To run the dockerize app please make sure that you have already created .env file and ensure that there are no missing attributes.
+
+There are several ways to run the application
+1. `docker-compose up` - Easiest
+2. Build the docker with volumes `docker build -t <name> . ` and to run `docker run -p 3000:3000 <name>`.
 
 ## Key Features
 This project's key feature is an all in one portfolio with dashboard for key metrics monitoring. Here are the key features.
@@ -81,6 +87,8 @@ This project's key feature is an all in one portfolio with dashboard for key met
 3. Secure Authentication: Built with NextAuth for enhanced security.
 4. File Storage: Integrated with AWS S3 for efficient and reliable file storage.
 5. CI/CD Versioning: Set up with GitHub Actions for continuous integration and deployment (ongoing).
-6. Dockerized Application: Simplified deployment and usage through containerization. (on going)
+6. Dockerized Application: Simplified deployment and usage through containerization.
 
-Built with [![Technologies](https://skillicons.dev/icons?i=aws,ts,react,prisma,nextjs,tailwind,githubactions,docker,supabase)](https://skillicons.dev)
+Built with love <3 
+
+[![Technologies](https://skillicons.dev/icons?i=aws,ts,react,prisma,nextjs,tailwind,githubactions,docker,supabase)](https://skillicons.dev)

@@ -14,7 +14,6 @@ const nextConfig: NextConfig = {
     version,
   },
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     domains: [
       "i.imgur.com",
