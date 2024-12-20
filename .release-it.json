@@ -31,11 +31,11 @@
             "type": "fix",
             "section": "Bug Fixes"
           },
-          { "type": "!feat", "section": "Breaking Changes" }
+          { "type": "BREAKING CHANGE", "section": "Breaking Changes" }
         ]
       },
       "bump": {
-        "major": ["!feat"],
+        "major": ["BREAKING CHANGE"],
         "minor": ["feat"],
         "patch": ["fix"]
       }
