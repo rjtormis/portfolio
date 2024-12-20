@@ -31,8 +31,13 @@
             "type": "fix",
             "section": "Bug Fixes"
           },
-          {}
+          { "type": "!feat", "section": "Breaking Changes" }
         ]
+      },
+      "bump": {
+        "major": ["!feat"],
+        "minor": ["feat"],
+        "patch": ["fix"]
       }
     }
   }
