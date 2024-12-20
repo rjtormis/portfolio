@@ -1,5 +1,7 @@
 # CHANGELOG
 
+## [0.5.0](https://github.com/rjtormis/portfolio/compare/release/v0.3.0...release/v0.5.0) (2024-12-20)
+
 ## 0.4.0 (2024-12-20)
 
 ### Features
