@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import { updateMetrics } from "@/app/actions/metrics";
 import { prisma } from "@/lib/prisma";
 
+/*Method:GET
+ * Route: /api/dashboard/metrics
+ * Description: Updates the metrics of the user
+ */
 export async function GET() {
   const email = process.env.EMAIL as string;
 

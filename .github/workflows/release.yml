@@ -1,5 +1,8 @@
 name: Release 
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
 permissions:
   contents: write
 jobs:
@@ -17,7 +20,7 @@ jobs:
                   git config --global user.email "raneljohnt@gmail.com"
                   git config --global user.name "Release Workflow"
             - name: Run release
-              run: npm run release
+              uses: JoshuaKGoldberg/release-it-action@v0.2.2
               env: 
                 GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
                 

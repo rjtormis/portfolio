@@ -3,6 +3,10 @@ import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 
+/*Method:PATCH
+ * Route: /api/dashboard/metrics/email
+ * Description: Updates the email metrics of the user
+ */
 export async function PATCH() {
   const session = await getServerSession(options);
 
