@@ -74,7 +74,7 @@ To run the development server:
 3. `npm run dev`
 
 ## Docker 
-To run the dockerize app please make sure that you have already created .env file and ensure that there are no missing attributes.
+To run the dockerize app please ensure that you have already created .env file and ensure that there are no missing attributes.
 
 There are several ways to run the application
 1. `docker-compose up` - Easiest
