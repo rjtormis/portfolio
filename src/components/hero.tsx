@@ -35,7 +35,7 @@ function Hero() {
                 </Button>
               </motion.div>
 
-              <a href="/RJT_CV_2024.pdf" download="RJT_CV_2024" onClick={handleDownloadResume}>
+              <a href="/RJT_CV_2025.pdf" download="RJT_CV_2025" onClick={handleDownloadResume}>
                 <motion.div whileHover={{ scale: 1.05 }}>
                   <Button variant="altghost" size="lg" className="rounded-full">
                     Download Resume
