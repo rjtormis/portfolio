@@ -1,3 +1,12 @@
+## [0.1.4](https://github.com/rjtormis/portfolio/compare/v0.1.3...v0.1.4) (2025-01-03)
+
+
+### Bug Fixes
+
+* Remove logo fixed Resume ([edaf682](https://github.com/rjtormis/portfolio/commit/edaf6820b91d9d4047b262f43af28d3f13915b9d))
+
+
+
 ## [0.1.3](https://github.com/rjtormis/portfolio/compare/v0.1.2...v0.1.3) (2025-01-03)
 
 
