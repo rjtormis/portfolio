@@ -1,4 +1,13 @@
-# 0.1.0 (2024-12-20)
+## [0.1.1](https://github.com/rjtormis/portfolio/compare/v0.1.0...v0.1.1) (2025-01-03)
+
+
+### Bug Fixes
+
+* remove logo ([c084a72](https://github.com/rjtormis/portfolio/commit/c084a72bfda5af25df80549ae46912b815637725))
+
+
+
+# [0.1.0](https://github.com/rjtormis/portfolio/compare/58f095b93bb778e0ff344476b0582f7bb97833d4...v0.1.0) (2024-12-20)
 
 
 ### Bug Fixes
