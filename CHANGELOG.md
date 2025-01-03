@@ -1,3 +1,12 @@
+## [0.1.3](https://github.com/rjtormis/portfolio/compare/v0.1.2...v0.1.3) (2025-01-03)
+
+
+### Bug Fixes
+
+* logo ([599a19c](https://github.com/rjtormis/portfolio/commit/599a19c873fa15029916ea721444f69f71601782))
+
+
+
 ## [0.1.2](https://github.com/rjtormis/portfolio/compare/v0.1.1...v0.1.2) (2025-01-03)
 
 
