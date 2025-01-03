@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import ThemeToggle from "./theme-toggle";
 // import white from "@/assets/white-logo.png";
 // import black from "@/assets/black-logo.png";
-import Image from "next/image";
+// import Image from "next/image";
 import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
 import {
@@ -22,6 +22,7 @@ import { usePathname } from "next/navigation";
 function Header({ isMobile }: { isMobile: boolean }) {
   const { resolvedTheme } = useTheme();
   const [theme, setTheme] = useState<string>("");
+  console.log(theme);
   const pathname = usePathname();
 
   useEffect(() => {
