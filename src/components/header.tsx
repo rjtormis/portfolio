@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import ThemeToggle from "./theme-toggle";
-import white from "@/assets/white-logo.png";
-import black from "@/assets/black-logo.png";
+// import white from "@/assets/white-logo.png";
+// import black from "@/assets/black-logo.png";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
@@ -34,13 +34,13 @@ function Header({ isMobile }: { isMobile: boolean }) {
     return (
       <div className="sticky top-0 p-4 bg-background z-50 shadow-md">
         <div className="flex justify-between">
-          <Link href="/">
-            {theme === "dark" ? (
+          {/* <Link href="/">
+            {theme === "dark" ? (adasd
               <Image src={white} alt="logo" className="w-[60px] h-[60px] " />
             ) : (
               <Image src={black} alt="logo" className="w-[60px] h-[60px] " />
             )}
-          </Link>
+          </Link> */}
 
           <div className="my-auto flex">
             {isMobile ? (
