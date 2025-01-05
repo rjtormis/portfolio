@@ -1,3 +1,12 @@
+## [0.1.7](https://github.com/rjtormis/portfolio/compare/v0.1.6...v0.1.7) (2025-01-05)
+
+
+### Bug Fixes
+
+* remove log ([2cf9075](https://github.com/rjtormis/portfolio/commit/2cf90753460dc8f81bcec4596e1bf8a9dbba0021))
+
+
+
 ## [0.1.6](https://github.com/rjtormis/portfolio/compare/v0.1.5...v0.1.6) (2025-01-05)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * logo ([599a19c](https://github.com/rjtormis/portfolio/commit/599a19c873fa15029916ea721444f69f71601782))
-
-
-
-## [0.1.2](https://github.com/rjtormis/portfolio/compare/v0.1.1...v0.1.2) (2025-01-03)
-
-
-### Bug Fixes
-
-* remove logo ([6c01165](https://github.com/rjtormis/portfolio/commit/6c011659606769d33f30137eb28c0a27ddc522e5))
 
 
 
