@@ -1,3 +1,12 @@
+## [0.1.8](https://github.com/rjtormis/portfolio/compare/v0.1.7...v0.1.8) (2025-01-07)
+
+
+### Bug Fixes
+
+* fix logo issue ([8a8feef](https://github.com/rjtormis/portfolio/commit/8a8feefe5a014db15fc6067b41904fcf5e1713a4))
+
+
+
 ## [0.1.7](https://github.com/rjtormis/portfolio/compare/v0.1.6...v0.1.7) (2025-01-05)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * Remove logo fixed Resume ([edaf682](https://github.com/rjtormis/portfolio/commit/edaf6820b91d9d4047b262f43af28d3f13915b9d))
-
-
-
-## [0.1.3](https://github.com/rjtormis/portfolio/compare/v0.1.2...v0.1.3) (2025-01-03)
-
-
-### Bug Fixes
-
-* logo ([599a19c](https://github.com/rjtormis/portfolio/commit/599a19c873fa15029916ea721444f69f71601782))
 
 
 
